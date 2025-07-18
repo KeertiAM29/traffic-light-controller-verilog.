@@ -1,0 +1,53 @@
+module traffic_light(
+    input clk,
+    output reg [3:0] g_rt,
+    output reg [7:0] ryg
+);
+// Clock divider for slow clock generation
+reg [22:0] clkdiv = 23'd0;
+reg clkkey;
+
+// FSM states
+parameter [3:0] state1 = 4'd0, 
+                state2 = 4'd1, 
+                state3 = 4'd2, 
+                state4 = 4'd3;
+reg [3:0] present_state = state1, next_state;
+// Clock divider logic
+always @(posedge clk) begin
+    clkdiv <= clkdiv + 1;
+    clkkey <= clkdiv[22];  // use MSB as a slower clock
+end
+
+// State transition and output logic
+always @(posedge clkkey) begin
+    present_state <= next_state  
+    case (present_state)
+        state1: begin
+            g_rt <= 4'b0000;
+            ryg  <= 8'b11001100;
+            next_state <= state2;
+        end
+        state2: begin
+            g_rt <= 4'b0101;
+            ryg  <= 8'b11000011;
+            next_state <= state3;
+        end
+        state3: begin
+            g_rt <= 4'b1010;
+            ryg  <= 8'b00111100;
+            next_state <= state4;
+        end
+        state4: begin
+            g_rt <= 4'b0000;
+            ryg  <= 8'b00110011;
+            next_state <= state1;
+        end
+        default: begin
+            g_rt <= 4'b0000;
+            ryg  <= 8'b00000000;
+            next_state <= state1;
+        end
+    endcase
+end
+endmodule
