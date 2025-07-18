@@ -35,3 +35,12 @@ This project replicates a basic traffic light system using four FSM states. It s
 
 ---
 
+# 🚦 Verilog-Based Traffic Light Controller
+
+![HDL](https://img.shields.io/badge/Language-Verilog-blue)
+![Simulation](https://img.shields.io/badge/Simulation-ModelSim%20%2F%20Xilinx-yellow)
+![Project](https://img.shields.io/badge/Type-FSM%20Traffic%20Controller-red)
+![Platform](https://img.shields.io/badge/Platform-FPGA-critical)
+
+
+
