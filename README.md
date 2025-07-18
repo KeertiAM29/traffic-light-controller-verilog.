@@ -1,18 +1,37 @@
-# traffic-light-controller-verilog.
-# 🚦 Traffic Light Controller (Verilog HDL)
+# 🚦 Verilog-Based Traffic Light Controller
 
-## 📌 Overview
-A multi-way traffic light system using finite state machines (FSMs) in Verilog.
+A Digital System Design project using Verilog HDL that simulates a two-way traffic signal controller using a Finite State Machine (FSM) and implements it on an FPGA board.
 
-## 💡 Features
-- FSM-based design for signal control
-- Customizable delay timing
-- Simulation of traffic junctions
+---
 
-## 🛠 Tech Stack
-- Verilog HDL
-- ModelSim / Xilinx
-- FSM Design Methodology
+## 🎯 Objective
 
-## 💡 Use Cases
-Ideal for VLSI and digital logic design learners.
+To design and implement a traffic light controller for a two-way intersection using FSMs in Verilog HDL and simulate its working using testbenches.
+
+---
+
+## 🧠 Project Overview
+
+This project replicates a basic traffic light system using four FSM states. It simulates LED behavior for North-South (NS) and East-West (EW) directions with specific timing for Green and Yellow lights.
+
+### 🔋 Key Features:
+- 🚥 4 FSM states controlling traffic flow
+- 🕒 Timed transitions using clock division
+- 🧪 Verilog testbench simulation
+- ⛓ FPGA implementation using UCF constraints
+- ✅ Verified functionality via synthesis and timing reports
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology        | Use                           |
+|------------------|--------------------------------|
+| Verilog HDL       | FSM design and simulation      |
+| Xilinx ISE / Vivado | Simulation & Synthesis       |
+| ModelSim           | Testbench simulation           |
+| FPGA Board         | Real-world hardware implementation |
+| UCF File           | Pin mapping for FPGA           |
+
+---
+
