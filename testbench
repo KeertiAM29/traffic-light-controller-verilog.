@@ -1,0 +1,26 @@
+reg clk;
+wire [3:0] g_rt;
+wire [7:0] ryg;
+// Instantiate the DUT (Design Under Test)
+traffic_light uut (
+    .clk(clk),
+    .g_rt(g_rt),
+    .ryg(ryg)
+);
+// Clock generation: 10ns clock period (100 MHz)
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+end
+// Monitor outputs
+initial begin
+    $display("Time\tclk\tg_rt\tryg");
+    $monitor("%0t\t%b\t%b\t%b", $time, clk, g_rt, ryg);
+end
+// Run simulation for enough time to see full FSM cycle
+initial begin
+    // Run for ~1 second of simulation time (with clock division, takes time)
+    #100_000_000;
+    $finish;
+end
+endmodule
