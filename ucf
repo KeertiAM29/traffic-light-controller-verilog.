@@ -1,0 +1,14 @@
+# PlanAhead Generated physical constraints 
+NET "g_rt[0]" LOC = P172;
+NET "g_rt[1]" LOC = P171;
+NET "g_rt[2]" LOC = P182;
+NET "g_rt[3]" LOC = P181;
+NET "ryg[0]" LOC = P187;
+NET "ryg[1]" LOC = P185;
+NET "ryg[2]" LOC = P184;
+NET "ryg[3]" LOC = P183;
+NET "ryg[4]" LOC = P194;
+NET "ryg[5]" LOC = P191;
+NET "ryg[6]" LOC = P190;
+NET "ryg[7]" LOC = P189;
+NET "clk" LOC = P79;
